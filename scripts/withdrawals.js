@@ -1,38 +1,5 @@
 const withdraw_list = document.querySelector('.withdraw_list')
-const allWithdrawes = [
-  {
-    _id: 1,
-    name: 'Frank Sjögren',
-    wins: '92',
-    losses: '6',
-    rate: '90',
-    profit: '20%'
-  },
-  {
-    _id: 2,
-    name: 'Frank Sjögren',
-    wins: '92',
-    losses: '6',
-    rate: '90',
-    profit: '30%'
-  },
-  {
-    _id: 3,
-    name: 'Frank Sjögren',
-    wins: '92',
-    losses: '6',
-    rate: '90',
-    profit: '40%'
-  },
-  {
-    _id: 4,
-    name: 'Frank Sjögren',
-    wins: '92',
-    losses: '6',
-    rate: '90',
-    profit: '50%'
-  }
-];
+const allWithdrawes = [];
 
 allWithdrawes.forEach((withdraw, index) => {
   withdraw_list.innerHTML += `<a  class="item">
