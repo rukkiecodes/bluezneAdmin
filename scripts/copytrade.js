@@ -12,11 +12,6 @@ image.addEventListener('change', (e) => {
   file = e.target.files[0]
 })
 
-// const myHeaders = new Headers()
-
-// myHeaders.append("Accept", "multipart/form-data")
-// myHeaders.append('Authorization', `Bearer ${token}`)
-
 copy_button.addEventListener('click', async () => {
   const formData = new FormData()
   formData.append("image", file)
