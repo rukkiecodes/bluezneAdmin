@@ -1,0 +1,37 @@
+const _name = document.querySelector('#name')
+const image = document.querySelector('#fileuploadInput')
+const wins = document.querySelector('#wins')
+const losses = document.querySelector('#losses')
+const rate = document.querySelector('#rate')
+const profit = document.querySelector('#profit')
+const copy_button = document.querySelector('#copy')
+const token = localStorage.token
+
+let file
+image.addEventListener('change', (e) => {
+  file = e.target.files[0]
+})
+
+// const myHeaders = new Headers()
+
+// myHeaders.append("Accept", "multipart/form-data")
+// myHeaders.append('Authorization', `Bearer ${token}`)
+
+copy_button.addEventListener('click', async () => {
+  const formData = new FormData()
+  formData.append("image", file)
+  formData.append("name", _name.value)
+  formData.append("wins", wins.value)
+  formData.append("losses", losses.value)
+  formData.append("rate", rate.value)
+  formData.append("profit", profit.value)
+
+  await axios({
+    method: 'post',
+    url: 'https://trustpaddi-waitlist.herokuapp.com/admin/creatCopy',
+    data: formData,
+    headers: { 'Content-Type': 'multipart/form-data' }
+  })
+
+  notification('notification-6', 3000)
+})
